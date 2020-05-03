@@ -131,6 +131,3 @@ print(bokeh.__version__)
 
 # In[ ]:
 
-
-
-
