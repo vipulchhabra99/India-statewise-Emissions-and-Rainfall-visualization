@@ -1,0 +1,86 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-2.0.2.min.js" integrity="sha384-ufR9RFnRs6lniiaFvtJziE0YeidtAgBRH6ux2oUItHw5WTvE1zuk9uzhUU/FJXDp" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.0.2.min.js" integrity="sha384-8QM/PGWBT+IssZuRcDcjzwIh1mkOmJSoNMmyYDZbCfXJg3Ap1lEvdVgFuSAwhb/J" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="07478e3e-058a-4747-bb20-a0c02a158e26" data-root-id="1045"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="1154">
+          {"118d5e7d-0fc3-4cf5-87b9-cc19300b697b":{"roots":{"references":[{"attributes":{"args":{"sc":{"id":"1002"},"slider":{"id":"1044"},"source":{"id":"1001"}},"code":"       \n        var f = slider.value;\n        sc.data['x'] = [];\n        sc.data['top'] = [];\n        for (var i = 0; i &lt;= source.get_length(); i++){\n          if (source.data['month'][i] == f){\n            sc.data['day'].push(source.data['day'][i])\n            sc.data['Sales'].push(source.data['Sales'][i])\n          }\n        }\n        sc.change.emit();\n    "},"id":"1043","type":"CustomJS"},{"attributes":{"axis":{"id":"1017"},"ticker":null},"id":"1020","type":"Grid"},{"attributes":{},"id":"1054","type":"UnionRenderers"},{"attributes":{"end":12,"format":"0[.]00","js_property_callbacks":{"change:value":[{"id":"1043"}]},"start":1,"title":"Month","value":1},"id":"1044","type":"Slider"},{"attributes":{"data_source":{"id":"1002"},"glyph":{"id":"1037"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"1038"},"selection_glyph":null,"view":{"id":"1040"}},"id":"1039","type":"GlyphRenderer"},{"attributes":{"overlay":{"id":"1029"}},"id":"1025","type":"BoxZoomTool"},{"attributes":{"callback":null,"formatters":{"Sales":"numeral","day":"datetime"},"tooltips":[["day","@day"],["Sales","@{Sales}{0,0}"]]},"id":"1005","type":"HoverTool"},{"attributes":{"children":[{"id":"1044"},{"id":"1006"}]},"id":"1045","type":"Column"},{"attributes":{},"id":"1026","type":"WheelZoomTool"},{"attributes":{},"id":"1027","type":"PanTool"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"1005"},{"id":"1025"},{"id":"1026"},{"id":"1027"},{"id":"1028"}]},"id":"1030","type":"Toolbar"},{"attributes":{},"id":"1028","type":"ResetTool"},{"attributes":{"data":{"Sales":{"__ndarray__":"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","dtype":"float64","shape":[365]},"day":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31],"index":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180,181,182,183,184,185,186,187,188,189,190,191,192,193,194,195,196,197,198,199,200,201,202,203,204,205,206,207,208,209,210,211,212,213,214,215,216,217,218,219,220,221,222,223,224,225,226,227,228,229,230,231,232,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248,249,250,251,252,253,254,255,256,257,258,259,260,261,262,263,264,265,266,267,268,269,270,271,272,273,274,275,276,277,278,279,280,281,282,283,284,285,286,287,288,289,290,291,292,293,294,295,296,297,298,299,300,301,302,303,304,305,306,307,308,309,310,311,312,313,314,315,316,317,318,319,320,321,322,323,324,325,326,327,328,329,330,331,332,333,334,335,336,337,338,339,340,341,342,343,344,345,346,347,348,349,350,351,352,353,354,355,356,357,358,359,360,361,362,363,364],"month":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12],"year":[2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017]},"selected":{"id":"1051"},"selection_policy":{"id":"1052"}},"id":"1001","type":"ColumnDataSource"},{"attributes":{"fill_color":{"value":"#e8bc76"},"line_color":{"value":"#e8bc76"},"top":{"field":"Sales"},"width":{"value":0.2},"x":{"field":"day"}},"id":"1037","type":"VBar"},{"attributes":{},"id":"1011","type":"DataRange1d"},{"attributes":{"below":[{"id":"1017"}],"center":[{"id":"1020"},{"id":"1024"}],"left":[{"id":"1021"}],"min_border":3,"plot_height":400,"renderers":[{"id":"1039"}],"title":{"id":"1007"},"toolbar":{"id":"1030"},"toolbar_location":"above","x_range":{"id":"1009"},"x_scale":{"id":"1013"},"y_range":{"id":"1011"},"y_scale":{"id":"1015"}},"id":"1006","subtype":"Figure","type":"Plot"},{"attributes":{"data":{"Sales":{"__ndarray__":"9OeXHkIPCEB3eTC9RKMGQEAsOWvlYRJACO8j2mRHHkDmGXc+YrYJQGrFEu6UPxNAzrMxyWWdDUBw/q7G6JMMQMWLz++27hVALJB+DhLuDUBhsxA3QSEXQHyDpfdUGhRA79SH5qB6DUCLVrughi0OQIqZGYcVZBdAAavoiDMUHUBIDpcm1jwRQNR28FskuA9AB/4m5DN0GUDqlQhLL9YJQPZIw45k/xRA5txy5bNIBUCWas9rz10aQBxLe5RFfglA6hvHOrJDGUBZg9zaoZUTQOb9L0HEZRVAjKHwagorC0C91gaqwHUVQBeTpP1CWxhAlkmt1fb+CUA=","dtype":"float64","shape":[31]},"day":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31],"index":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],"month":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],"year":[2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017]},"selected":{"id":"1053"},"selection_policy":{"id":"1054"}},"id":"1002","type":"ColumnDataSource"},{"attributes":{},"id":"1050","type":"BasicTickFormatter"},{"attributes":{},"id":"1048","type":"BasicTickFormatter"},{"attributes":{},"id":"1015","type":"LinearScale"},{"attributes":{"text":"YEARLY SALES"},"id":"1007","type":"Title"},{"attributes":{"axis_label":"Day","axis_label_text_font_size":"12pt","axis_label_text_font_style":"normal","formatter":{"id":"1050"},"ticker":{"id":"1018"}},"id":"1017","type":"LinearAxis"},{"attributes":{},"id":"1051","type":"Selection"},{"attributes":{"axis":{"id":"1021"},"dimension":1,"ticker":null},"id":"1024","type":"Grid"},{"attributes":{},"id":"1022","type":"BasicTicker"},{"attributes":{"formatter":{"id":"1048"},"ticker":{"id":"1022"}},"id":"1021","type":"LinearAxis"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#e8bc76"},"line_alpha":{"value":0.1},"line_color":{"value":"#e8bc76"},"top":{"field":"Sales"},"width":{"value":0.2},"x":{"field":"day"}},"id":"1038","type":"VBar"},{"attributes":{},"id":"1009","type":"DataRange1d"},{"attributes":{},"id":"1052","type":"UnionRenderers"},{"attributes":{},"id":"1018","type":"BasicTicker"},{"attributes":{},"id":"1013","type":"LinearScale"},{"attributes":{"bottom_units":"screen","fill_alpha":0.5,"fill_color":"lightgrey","left_units":"screen","level":"overlay","line_alpha":1.0,"line_color":"black","line_dash":[4,4],"line_width":2,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"1029","type":"BoxAnnotation"},{"attributes":{},"id":"1053","type":"Selection"},{"attributes":{"source":{"id":"1002"}},"id":"1040","type":"CDSView"}],"root_ids":["1045"]},"title":"Bokeh Application","version":"2.0.2"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('1154').textContent;
+                  var render_items = [{"docid":"118d5e7d-0fc3-4cf5-87b9-cc19300b697b","root_ids":["1045"],"roots":{"1045":"07478e3e-058a-4747-bb20-a0c02a158e26"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        clearInterval(timer);
+                        embed_document(root);
+                      } else {
+                        attempts++;
+                        if (attempts > 100) {
+                          clearInterval(timer);
+                          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        }
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>
