@@ -1,6 +1,9 @@
 # India Statewise greenhouse gas emissions and rainfall 
 
 
+![Visualization](https://github.com/avani17101/Data-Visualization-Project-India-statewise-Emissions-and-Rainfall-visualization/blob/master/Int-elligence/visualization_img.png)
+
+
 **Project developed as part of Data Visualization course at IIIT Hyderabad**
 
 
@@ -37,4 +40,12 @@ pip install -r requirements.txt
 Use bokeh serve --show Int-elligence (folder_name)
 
 **LIBRARIES USED**
- Bokeh mainly for visulatization
+
+ Bokeh mainly for visualization
+ 
+ **OTHER PROBLEMS FOR WHICH THE SAME VISUALIZATION CAN BE USED**
+
+The same visualization can be used to analyze any parameters where there is the possibility of correlation eg Number of species and Forest Cover area, Annual Rainfall and Forest Cover, number of vehicles, etc.
+This will help in analyzing the ecological conditions of states and help in identifying various sources of pollution. This will help in analyzing the country ( India ) as the whole on the number of states whose conditions are declining over the years and which states needs to improve and regulate the resources etc. 
+
+
